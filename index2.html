@@ -1,11 +1,38 @@
 <!-- index2.html -->
-<!-- html: head + body -->
+<!-- JS with Jasmine -->
 <!DOCTYPE html>
 <html>
 <head>
   <title>MyTitle</title>
+  <style>
+    h1, h2 {
+      color: red;
+    }
+    p {
+      color: green;
+    }
+    .classBlack {
+      color: yellow;
+      background-color: grey;
+    }
+  </style>
 </head>
 <body>
   <h1>Hello World!</h1>
+  <h2>Hello World!</h2>
+  <p>Hello World!</p>
+  <h1 class="classBlack">Hello World!</h1>
+  <h2 class="classBlack">Hello World!</h2>
+  <p class="classBlack">Hello World!</p>
+  <div id="Greetings"></div>
+<script>
+//  window.alert("Hellow World! from JS window.alter()");
+  document.write("Hello World, from JS document.write!");
+  document.getElementById("Greetings").innerHTML = "Hello World, from JS getElementById!";
+  console.log("Hello World, from JS console.log!");
+  document.write("<br /><br /><br />");
+</script>
+
+<button onclick="document.write(5 + 6)">Clear the whole page using document.write()</button>
 </body>
 </html>
