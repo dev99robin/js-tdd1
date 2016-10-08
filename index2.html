@@ -1,38 +1,44 @@
 <!-- index2.html -->
-<!-- JS with Jasmine -->
+<!-- JS + jasmine -->
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MyTitle</title>
-  <style>
-    h1, h2 {
-      color: red;
-    }
-    p {
-      color: green;
-    }
-    .classBlack {
-      color: yellow;
-      background-color: grey;
-    }
-  </style>
+  <meta charset="utf-8">
+  <title>Jasmine Spec Runner v2.5.2</title>
+
+  <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.5.2/jasmine_favicon.png">
+  <link rel="stylesheet" href="lib/jasmine-2.5.2/jasmine.css">
+
+  <script src="lib/jasmine-2.5.2/jasmine.js"></script>
+  <script src="lib/jasmine-2.5.2/jasmine-html.js"></script>
+  <script src="lib/jasmine-2.5.2/boot.js"></script>
+
+  <!-- include source files here... -->
+  <script src="src/sum.js"></script>
+
+  <!-- include spec files here... -->
+  <script src="src/sum.test.js"></script>
+
 </head>
 <body>
-  <h1>Hello World!</h1>
-  <h2>Hello World!</h2>
-  <p>Hello World!</p>
-  <h1 class="classBlack">Hello World!</h1>
-  <h2 class="classBlack">Hello World!</h2>
-  <p class="classBlack">Hello World!</p>
-  <div id="Greetings"></div>
-<script>
-//  window.alert("Hellow World! from JS window.alter()");
-  document.write("Hello World, from JS document.write!");
-  document.getElementById("Greetings").innerHTML = "Hello World, from JS getElementById!";
-  console.log("Hello World, from JS console.log!");
-  document.write("<br /><br /><br />");
-</script>
+  <p id="demo"></p>
 
-<button onclick="document.write(5 + 6)">Clear the whole page using document.write()</button>
+  <script>
+  //set id demo to contain "Hello Worrld!"
+    document.getElementById("demo").innerHTML = "Hello World!";
+  </script>
+
+  <script>
+  //test if id demo is set correctly
+    describe("Hello world test suite", function() {
+        it("This should pass!", function() {
+          expect(document.getElementById('demo').innerHTML).toBe("Hello World!");
+        });
+
+        it("This should also pass!", function() {
+          expect(document.getElementById('demo').innerHTML).not.toBe("hello World!");
+        });
+    });
+  </script>
 </body>
 </html>
